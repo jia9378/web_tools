@@ -3,29 +3,84 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tartan Generator</title>
+    <title>Royal Tartan Studio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.10/p5.min.js"></script>
   </head>
   <body>
     <main>
       <header>
         <p class="eyebrow">Royal Tartan Studio</p>
         <h1>Tartan Generator</h1>
-        <p>Make your own tartan pattern.</p>
+        <p>A little color. A little texture. A pattern of your own.</p>
       </header>
 
-      <canvas id="tartan" width="720" height="720" aria-label="Generated tartan pattern">
-      </canvas>
+      <!-- Flexbox places the canvas beside the controls. -->
+      <section class="studio" aria-label="Pattern editor">
+        <div class="preview">
+          <div id="canvas-holder"></div>
+          <div class="caption"><span>Your tartan</span><span>720 × 720 px</span></div>
+        </div>
 
-      <div class="controls">
-        <label for="tone">Color tone <output id="toneValue" for="tone">0°</output></label>
-        <input id="tone" type="range" min="0" max="359" value="0">
+        <div class="controls">
+          <div>
+            <p class="eyebrow">Make it yours</p>
+            <h2>Two sliders.<br>Endless combinations.</h2>
+            <p>Start with a swatch below, or find your own mix.</p>
+          </div>
+          <div class="control">
+            <label for="tone">Color tone <output id="toneValue" for="tone">0°</output></label>
+            <input id="tone" type="range" min="0" max="359" value="0">
+            <p>Shift the color of the threads.</p>
+          </div>
+          <div class="control">
+            <label for="size">Pattern size <output id="sizeValue" for="size">180 px</output></label>
+            <input id="size" type="range" min="60" max="360" step="12" value="180">
+            <p>From small checks to bold squares.</p>
+          </div>
+          <div>
+            <button id="download" type="button" disabled>Download PNG <span aria-hidden="true">↓</span></button>
+            <p class="download-note">Save the pattern at full size.</p>
+          </div>
+        </div>
+      </section>
 
-        <label for="size">Pattern size <output id="sizeValue" for="size">180 px</output></label>
-        <input id="size" type="range" min="60" max="360" step="12" value="180">
-
-        <button id="download" type="button">Download image</button>
-      </div>
+      <section aria-labelledby="gallery-title">
+        <div class="section-heading">
+          <h2 id="gallery-title">A few starting points</h2>
+          <p>Pick a swatch, then play.</p>
+        </div>
+        <!-- Flex-wrap lets the cards move onto new rows. -->
+        <div class="gallery">
+          <button class="swatch" type="button" aria-pressed="true" disabled>
+            <img alt="" width="720" height="720">
+            <span class="swatch-name">01 / Cranberry</span><span class="swatch-detail">0° · 180 px</span>
+          </button>
+          <button class="swatch" type="button" aria-pressed="false" disabled>
+            <img alt="" width="720" height="720">
+            <span class="swatch-name">02 / Amber</span><span class="swatch-detail">35° · 120 px</span>
+          </button>
+          <button class="swatch" type="button" aria-pressed="false" disabled>
+            <img alt="" width="720" height="720">
+            <span class="swatch-name">03 / Evergreen</span><span class="swatch-detail">135° · 240 px</span>
+          </button>
+          <button class="swatch" type="button" aria-pressed="false" disabled>
+            <img alt="" width="720" height="720">
+            <span class="swatch-name">04 / Blue hour</span><span class="swatch-detail">195° · 180 px</span>
+          </button>
+          <button class="swatch" type="button" aria-pressed="false" disabled>
+            <img alt="" width="720" height="720">
+            <span class="swatch-name">05 / Iris</span><span class="swatch-detail">245° · 120 px</span>
+          </button>
+          <button class="swatch" type="button" aria-pressed="false" disabled>
+            <img alt="" width="720" height="720">
+            <span class="swatch-name">06 / Mulberry</span><span class="swatch-detail">320° · 240 px</span>
+          </button>
+        </div>
+      </section>
+      <footer>
+        <span>Royal Tartan Studio</span>
+      </footer>
     </main>
     <script src="sketch.js"></script>
     <script src="tool.js"></script>
