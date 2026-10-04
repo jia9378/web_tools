@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tartan Generator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">Royal Tartan Studio</p>
+        <h1>Tartan Generator</h1>
+        <p>Make your own tartan pattern.</p>
+      </header>
+
+      <canvas id="tartan" width="720" height="720">
+      </canvas>
+
+      <div class="controls">
+        <label for="tone">Color tone <output id="toneValue" for="tone">0°</output></label>
+        <input id="tone" type="range" min="0" max="359" value="0">
+
+        <label for="size">Pattern size <output id="sizeValue" for="size">180 px</output></label>
+        <input id="size" type="range" min="60" max="360" step="12" value="180">
+
+        <button id="download" type="button">Download image</button>
+      </div>
+    </main>
+    <script src="sketch.js"></script>
+    <script src="tool.js"></script>
+  </body>
+</html>

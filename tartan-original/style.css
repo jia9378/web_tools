@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  background: #f3f0e9;
+  color: #252a24;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  max-width: 560px;
+  margin: auto;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 12px 0;
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 7vw, 42px);
+  font-weight: normal;
+}
+
+header > p:last-child {
+  margin: 0 0 24px;
+  color: #61665d;
+  font-size: 14px;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #252a24;
+}
+
+.controls {
+  padding-top: 24px;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+output, .note {
+  color: #61665d;
+}
+
+input {
+  width: 100%;
+  margin: 10px 0 22px;
+  accent-color: #354733;
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  background: #283b2b;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #40583d;
+}
+
+button:focus-visible, input:focus-visible {
+  outline: 2px solid #283b2b;
+  outline-offset: 4px;
+}
